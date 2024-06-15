@@ -1,0 +1,7 @@
+repos:
+  - repo: git@github.com:macisamuele/language-formatters-pre-commit-hooks.git
+    rev: v2.13.0
+    hooks:
+      - id: pretty-format-java
+        args:
+          - '--autofix'
