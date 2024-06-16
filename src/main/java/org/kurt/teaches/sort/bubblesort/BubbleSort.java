@@ -7,7 +7,7 @@ import org.kurt.util.Swapper;
 public class BubbleSort {
   private static final Logger LOGGER = LoggerUtil.getLogger();
 
-  public static int[] bubbleSort(int[] unsorted, Swapper swapper) {
+  public static void bubbleSort(int[] unsorted, Swapper swapper) {
     int length = unsorted.length;
     boolean swapped;
     do {
@@ -19,6 +19,5 @@ public class BubbleSort {
         }
       }
     } while (swapped);
-    return unsorted;
   }
 }
