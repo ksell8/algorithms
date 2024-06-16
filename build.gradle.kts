@@ -13,9 +13,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.0-M2")
+    // https://mvnrepository.com/artifact/org.ow2.asm/asm
     testImplementation("org.ow2.asm:asm:9.7")
+    // https://mvnrepository.com/artifact/org.mockito/mockito-core
+    testImplementation("org.mockito:mockito-core:5.12.0")
 }
 
 tasks.test {
