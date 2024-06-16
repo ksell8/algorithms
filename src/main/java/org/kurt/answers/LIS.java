@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 import org.kurt.util.IntArrayFunction;
 import org.kurt.util.LoggerUtil;
+import org.kurt.util.Swapper;
 
 public class LIS {
   private static final Logger LOGGER = LoggerUtil.getLogger();
@@ -28,7 +29,7 @@ public class LIS {
               }
             }
           }
-          bubbleSort(longestEndingAtN);
+          bubbleSort(longestEndingAtN, new Swapper());
           return longestEndingAtN[length - 1];
         };
 

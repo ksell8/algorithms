@@ -19,6 +19,9 @@ dependencies {
     testImplementation("org.ow2.asm:asm:9.7")
     // https://mvnrepository.com/artifact/org.mockito/mockito-core
     testImplementation("org.mockito:mockito-core:5.12.0")
+//    // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+//    testImplementation("org.mockito:mockito-junit-jupiter:5.12.0")
+
 }
 
 tasks.test {
