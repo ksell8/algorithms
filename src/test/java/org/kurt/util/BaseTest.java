@@ -1,8 +1,8 @@
 package org.kurt.util;
 
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.BeforeEach;
 
 public abstract class BaseTest {
 
@@ -16,5 +16,4 @@ public abstract class BaseTest {
   }
 
   protected abstract Class<?> getClassUnderTest();
-
 }

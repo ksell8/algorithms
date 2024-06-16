@@ -132,29 +132,23 @@ import org.junit.jupiter.api.Test;
  *       the failing function name to only run that test.
  *   <li>Add a breakpoint to the first line of the function in Fibonacci.java with the failed test.
  *       <br>
- *       <img alt="breakpoint" src="{@docRoot}/resource-files/breakpoint.png"><br>Clicking the margin
- *       next to the line number will add a breakpoint to the execution for debugging purposes. We
- *       will be able to look into the state of the program and determine the cause for failure.<br>
- *   </li>
- *   <li>
- *      Debug the failing test by right clicking the green arrow and clicking debug.
- *      <img alt="run-debugger" src="{@docRoot}/resource-files/run-debugger.png"><br>
- *      <p>
- *      This will allow the debugger to halt at the breakpoint you added.  The debugger should pop up at the bottom
- *      of your IDE, if not navigate to the lower left corner and click the Debug icon.  Your screen should look like:
- *      </p>
- *      <img alt="run-debugger" src="{@docRoot}/resource-files/debugger.png">
- *      <p>
- *      Clicking on the step-over button (denoted by the pink box) steps to the next step of the function being
- *      debugged, step-into (which is next to it) will step-into the function being called which may use implementations
- *      outside of the function being debugged.
- *      </p>
- *      <br>
- *      <img alt="welcome-to-the-call-stack" src="{@docRoot}/resource-files/call-stack.png" width=1000px height=708px><br>
- *      As you click through the function you will see
- *   </li>
+ *       <img alt="breakpoint" src="{@docRoot}/resource-files/breakpoint.png"><br>
+ *       Clicking the margin next to the line number will add a breakpoint to the execution for
+ *       debugging purposes. We will be able to look into the state of the program and determine the
+ *       cause for failure.<br>
+ *   <li>Debug the failing test by right clicking the green arrow and clicking debug. <img
+ *       alt="run-debugger" src="{@docRoot}/resource-files/run-debugger.png"><br>
+ *       <p>This will allow the debugger to halt at the breakpoint you added. The debugger should
+ *       pop up at the bottom of your IDE, if not navigate to the lower left corner and click the
+ *       Debug icon. Your screen should look like: <img alt="run-debugger"
+ *       src="{@docRoot}/resource-files/debugger.png">
+ *       <p>Clicking on the step-over button (denoted by the pink box) steps to the next step of the
+ *       function being debugged, step-into (which is next to it) will step-into the function being
+ *       called which may use implementations outside of the function being debugged. <br>
+ *       <img alt="welcome-to-the-call-stack" src="{@docRoot}/resource-files/call-stack.png"
+ *       width=1000px height=708px><br>
+ *       As you click through the function you will see
  * </ol>
- *
  *
  * <p>Once you've identified the issue try to fix it in org.kurt.teaches.Fibonacci, rerun the tests
  * until you pass! Ensure all tests pass! You can fix the failing test and fail different tests in

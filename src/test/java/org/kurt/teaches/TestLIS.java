@@ -1,13 +1,14 @@
 package org.kurt.teaches;
 
-import static org.kurt.answers.LIS.*;
-import org.kurt.util.IntArrayFunction;
-import org.kurt.util.BaseTest;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.kurt.answers.LIS.*;
+
+import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import java.util.stream.Stream;
+import org.kurt.util.BaseTest;
+import org.kurt.util.IntArrayFunction;
 
 public class TestLIS extends BaseTest {
 
@@ -16,13 +17,11 @@ public class TestLIS extends BaseTest {
     return org.kurt.answers.LIS.class;
   }
 
-
   // functions to test
   static Stream<Arguments> provideFunctions() {
     return Stream.of(
-            Arguments.of(longestIncreasingSubsequence),
-            Arguments.of(longestIncreasingSubsequenceQuick)
-    );
+        Arguments.of(longestIncreasingSubsequence),
+        Arguments.of(longestIncreasingSubsequenceQuick));
   }
 
   @ParameterizedTest(name = "lis={0}")
@@ -34,14 +33,13 @@ public class TestLIS extends BaseTest {
 
   @ParameterizedTest(name = "lis={0}")
   @MethodSource("provideFunctions")
-  public void testKurtsProblem(IntArrayFunction lis){
-    assertEquals(5, lis.run(new int[]{4,7,5,-4,-3,2,10,9,11}));
+  public void testKurtsProblem(IntArrayFunction lis) {
+    assertEquals(5, lis.run(new int[] {4, 7, 5, -4, -3, 2, 10, 9, 11}));
   }
 
   @ParameterizedTest(name = "lis={0}")
   @MethodSource("provideFunctions")
-  public void testKurtsProblem2(IntArrayFunction lis){
-    assertEquals(5, lis.run(new int[]{8,5,-2,4,5,3,4,7,9,5}));
+  public void testKurtsProblem2(IntArrayFunction lis) {
+    assertEquals(5, lis.run(new int[] {8, 5, -2, 4, 5, 3, 4, 7, 9, 5}));
   }
-
 }
