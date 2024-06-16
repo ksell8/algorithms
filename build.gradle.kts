@@ -2,6 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     id("java")
+//    id("ru.vyarus.mkdocs") version "4.0.1"
 }
 
 group = "org.kurt"
@@ -14,6 +15,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.ow2.asm:asm:9.7")
 }
 
 tasks.test {

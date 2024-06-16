@@ -13,8 +13,7 @@ import org.kurt.util.LoggerUtil;
  * Max signed long is: 2^63 - 1 (9,223,372,036,854,775,807)<br>
  * Max signed int is: 2^31 - 1 (2,147,483,647)<br>
  * Max unsigned int is: 2^32 - 1 (4,294,967,295)<br>
- * <i>Leave it to you: What is the maximum value of an unsigned long?</i> <a
- * href="https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/math/BigInteger.java">Source</a>
+ * <a href="https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/math/BigInteger.java">Source</a>
  * The have contain an int array called mag that has this definition:
  *
  * <p>The magnitude of this BigInteger, in <i>big-endian</i> order: the zeroth element of this array
@@ -57,6 +56,7 @@ import org.kurt.util.LoggerUtil;
  */
 public class Fibonacci {
   private static final Logger LOGGER = LoggerUtil.getLogger();
+  private Fibonacci(){} //ensures non-instantiability (static functions only)
 
   /**
    * This utilizes a loop. The loop is the ideal solution because it only remembers the previous and
@@ -92,6 +92,7 @@ public class Fibonacci {
    */
   public static BigInteger fibDynamic(int fib) {
     LOGGER.info(String.format("Running fibDynamic(%d)", fib));
+    // TODO for student: add comment about the length of Fib
     BigInteger[] Fib = new BigInteger[fib + 1];
     Fib[0] = BigInteger.ZERO;
     Fib[1] = BigInteger.ONE;
@@ -114,6 +115,8 @@ public class Fibonacci {
    * @return BigInteger fib-th fibonacci number
    */
   public static BigInteger fibRecursive(int fib) {
+    //TODO for student: how many times will this logger run as a function of fib?
+    // why is it hard to log the result in this function?
     LOGGER.info(String.format("Running fibRecursive(%d)", fib));
     if (fib == 0) {
       return BigInteger.ZERO;
