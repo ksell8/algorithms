@@ -8,11 +8,11 @@ import org.objectweb.asm.*;
 /** */
 public class BytecodeInspector {
 
-  private static final Set<String> RESTRICTED_METHODS = new HashSet<>();
+  private static final Set<String> RESTRICTED_CLASSES = new HashSet<>();
 
   static {
-    RESTRICTED_METHODS.add("java/util/Arrays.sort");
-    RESTRICTED_METHODS.add("java/util/Collections.binarySearch");
+    RESTRICTED_CLASSES.add("java/util/Arrays");
+    RESTRICTED_CLASSES.add("java/util/Collections");
   }
 
   public static void inspectClassForRestrictedMethods(Class<?> clazz) {
@@ -27,12 +27,11 @@ public class BytecodeInspector {
                 @Override
                 public void visitMethodInsn(
                     int opcode, String owner, String name, String descriptor, boolean isInterface) {
-                  String methodSignature = String.format("%s, %s", owner, name);
-                  if (RESTRICTED_METHODS.contains(methodSignature)) {
+                  if (RESTRICTED_CLASSES.contains(owner)) {
                     throw new AssertionError(
                         String.format(
-                            "Usage of restricted method detected in method: %s -> %s",
-                            name, methodSignature));
+                            "Usage of restricted class detected in method: %s -> %s.%s",
+                            name, owner, name));
                   }
                   super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);
                 }

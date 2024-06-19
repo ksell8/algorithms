@@ -9,7 +9,6 @@ public class HeapSpaceOutOfMemory {
   private static final Logger LOGGER = LoggerUtil.getLogger();
 
   private HeapSpaceOutOfMemory() {}
-  ;
 
   public static void arrayListOOM() {
     List<Integer> list = new ArrayList<>();
@@ -24,10 +23,10 @@ public class HeapSpaceOutOfMemory {
   }
 
   public static void arrayOOM() {
-    int length = Integer.MAX_VALUE; // 2^31-1
-    int[] huge = new int[length];
     int counter = 0;
     try {
+      int length = Integer.MAX_VALUE; // 2^31-1
+      int[] huge = new int[length];
       for (counter = 0; counter < length; counter++) {
         huge[counter] = counter;
       }
@@ -37,7 +36,7 @@ public class HeapSpaceOutOfMemory {
   }
 
   public static void main(String[] args) {
-    // arrayOOM();
+    arrayOOM();
     arrayListOOM();
   }
 }

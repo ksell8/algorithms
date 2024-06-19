@@ -37,3 +37,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Core dumps from experiments ###
+*.dmp
+*.phd
+*.txt
+*.trc
