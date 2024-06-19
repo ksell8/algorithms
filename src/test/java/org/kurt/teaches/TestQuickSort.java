@@ -7,9 +7,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.kurt.teaches.sort.quicksort.QuickSort;
 import org.kurt.teaches.sort.quicksort.partition.PartitionType;
+import org.kurt.util.BaseTest;
 
-public class TestQuickSort {
+public class TestQuickSort  extends BaseTest {
   private QuickSort sort;
+
+  @Override
+  protected Class<?> getClassUnderTest() {
+    return QuickSort.class;
+  }
 
   @BeforeEach
   public void setupSort() {
@@ -24,4 +30,5 @@ public class TestQuickSort {
     System.out.println(String.format("swaps: %d", sort.getPartition().getSwapper().getSwaps()));
     assertTrue(sort.getPartition().getSwapper().getSwaps() < 25);
   }
+
 }

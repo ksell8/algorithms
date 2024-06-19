@@ -5,7 +5,9 @@ import java.util.HashSet;
 import java.util.Set;
 import org.objectweb.asm.*;
 
-/** */
+/**
+ * The bytecodeInspector
+ * */
 public class BytecodeInspector {
 
   private static final Set<String> RESTRICTED_CLASSES = new HashSet<>();
