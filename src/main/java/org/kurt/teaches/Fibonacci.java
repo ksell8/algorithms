@@ -113,7 +113,7 @@ public class Fibonacci {
    * most cases, it's practically a definition of recursion. But, since this recursive sub-call is
    * recursing 2x each step in the Recursion increases the recursive streams by a multiple of 2!
    *
-   * @param fib: int
+   * @param fib int
    * @return BigInteger fib-th fibonacci number
    */
   public static BigInteger fibRecursive(int fib) {

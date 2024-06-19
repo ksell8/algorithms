@@ -4,7 +4,7 @@ import org.kurt.util.Swapper;
 
 public abstract class Partition {
 
-  public Swapper swapper;
+  protected Swapper swapper;
 
   public Partition() {
     swapper = new Swapper();
@@ -24,5 +24,9 @@ public abstract class Partition {
     }
     swapper.swap(unsorted, index, right);
     return index;
+  }
+
+  public Swapper getSwapper() {
+    return swapper;
   }
 }

@@ -1,6 +1,5 @@
 package org.kurt.teaches.search.binary;
 
-import java.util.ArrayList;
 import java.util.logging.Logger;
 import org.kurt.util.LoggerUtil;
 
@@ -18,15 +17,15 @@ public class BinarySearch {
    * @param variable: int
    * @return int
    */
-  public static int binarySearch(ArrayList<Integer> array, int variable) {
+  public static int binarySearch(int[] array, int variable) {
     LOGGER.finest(String.format("searching for %d", variable));
     int low = 0;
-    int high = array.size() - 1;
+    int high = array.length - 1;
 
     while (low <= high) {
       LOGGER.finest(String.format("high: %d, low: %d", high, low));
       int mid = (low + high) >>> 1;
-      int midVal = array.get(mid);
+      int midVal = array[mid];
       LOGGER.finest(String.format("Checking against middle value %d", midVal));
       if (variable > midVal) low = mid + 1;
       else if (variable < midVal) high = mid - 1;

@@ -2,7 +2,8 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     id("java")
-//    id("ru.vyarus.mkdocs") version "4.0.1"
+    id("ru.vyarus.mkdocs") version "4.0.1"
+    id("ru.vyarus.quality") version "5.0.0"
 }
 
 group = "org.kurt"
@@ -32,6 +33,19 @@ tasks.test {
         showStandardStreams = true // Show standard output and error streams
         exceptionFormat = TestExceptionFormat.FULL  // Show full exception stack traces
     }
+}
+
+quality {
+    /**
+     * spotbugs is chill
+     */
+    spotbugs = true
+    checkstyle = false
+    /**
+     * Strict quality leads to build fail on any violation found. If disabled, all violation
+     * are just printed to console.
+     */
+    strict = false
 }
 
 val javaDocDir = "build/docs/javadoc"

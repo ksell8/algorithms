@@ -1,13 +1,20 @@
 package org.kurt.teaches.sort.bubblesort;
 
 import java.util.logging.Logger;
+import org.kurt.teaches.sort.Sort;
 import org.kurt.util.LoggerUtil;
 import org.kurt.util.Swapper;
 
-public class BubbleSort {
+public class BubbleSort implements Sort {
   private static final Logger LOGGER = LoggerUtil.getLogger();
+  private Swapper swapper;
 
-  public static void bubbleSort(int[] unsorted, Swapper swapper) {
+  public BubbleSort() {
+    swapper = new Swapper();
+  }
+
+  @Override
+  public void sort(int[] unsorted) {
     int length = unsorted.length;
     boolean swapped;
     do {
@@ -19,5 +26,10 @@ public class BubbleSort {
         }
       }
     } while (swapped);
+    LOGGER.info(String.format("You used %d swaps.", swapper.getSwaps()));
+  }
+
+  public Swapper getSwapper() {
+    return swapper;
   }
 }

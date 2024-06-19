@@ -4,7 +4,7 @@ import java.util.logging.*;
 import org.kurt.teaches.Fibonacci;
 
 public class LoggerUtil {
-  public static Logger LOGGER = Logger.getLogger(Fibonacci.class.getName());
+  public static final Logger LOGGER = Logger.getLogger(Fibonacci.class.getName());
 
   static {
     ConsoleHandler handler = new ConsoleHandler();
