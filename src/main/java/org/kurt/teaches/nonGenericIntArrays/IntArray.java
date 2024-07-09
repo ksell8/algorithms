@@ -9,16 +9,21 @@ public class IntArray {
     capacity = array.length;
   }
 
-  public static void copyTo(int[] o, int[] n, int startingIndex, int endingIndex) {
-    for (int i = startingIndex; i <= endingIndex; i++) {
-      n[i] = o[i];
-    }
+  /**
+   * TODO: explain how System.java is implemented using IntrinsicCandidate
+   * @param o
+   * @param n
+   * @param startingIndex
+   * @param length
+   */
+  public static void copyTo(int[] o, int[] n, int startingIndex, int length) {
+    System.arraycopy(o, startingIndex, n, startingIndex, length);
   }
 
   public void grow(int desiredCapacity) {
     if (desiredCapacity > capacity) {
       int[] newArray = new int[desiredCapacity];
-      copyTo(elementData, newArray, 0, capacity - 1);
+      copyTo(elementData, newArray, 0, capacity);
       elementData = newArray;
       capacity = desiredCapacity;
     }
@@ -37,13 +42,6 @@ public class IntArray {
   public void append(int item) {
     grow(capacity + 1);
     elementData[capacity - 1] = item;
-  }
-
-  public void append(int[] items) {
-    int newLength = items.length + capacity;
-    int oldCapacity = capacity;
-    grow(newLength);
-    copyTo(items, elementData, oldCapacity - 1, newLength - 1);
   }
 
   public int get(int index) {

@@ -15,6 +15,7 @@ public class BytecodeInspector {
   static {
     RESTRICTED_CLASSES.add("java/util/Arrays");
     RESTRICTED_CLASSES.add("java/util/Collections");
+    RESTRICTED_CLASSES.add("java/lang/Math");
   }
 
   public static void inspectClassForRestrictedMethods(Class<?> clazz) {
