@@ -1,10 +1,20 @@
 package org.kurt.teaches.search.binary;
 
+import org.kurt.util.LoggerFormatter;
+
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.kurt.util.LoggerUtil;
 
 public class BinarySearch {
-  private static final Logger LOGGER = LoggerUtil.getLogger();
+  public static final Logger LOGGER = Logger.getLogger(BinarySearch.class.getName());
+
+  static {
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setFormatter(new LoggerFormatter());
+    LOGGER.addHandler(handler);
+    LOGGER.setLevel(Level.INFO);
+  }
 
   private BinarySearch() {}
 

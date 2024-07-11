@@ -1,12 +1,22 @@
 package org.kurt.teaches.sort.quicksort;
 
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.kurt.teaches.sort.Sort;
 import org.kurt.teaches.sort.quicksort.partition.*;
-import org.kurt.util.LoggerUtil;
+import org.kurt.util.LoggerFormatter;
 
 public class QuickSort implements Sort {
-  private static final Logger LOGGER = LoggerUtil.getLogger();
+  public static final Logger LOGGER = Logger.getLogger(QuickSort.class.getName());
+
+  static {
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setFormatter(new LoggerFormatter());
+    LOGGER.addHandler(handler);
+    LOGGER.setLevel(Level.INFO);
+  }
   private Partition partition;
 
   public QuickSort(PartitionType type) {

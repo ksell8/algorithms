@@ -1,12 +1,22 @@
 package org.kurt.experiments.dynamicProgramming;
 
+import org.kurt.util.LoggerFormatter;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.kurt.util.LoggerUtil;
 
 public class HeapSpaceOutOfMemory {
-  private static final Logger LOGGER = LoggerUtil.getLogger();
+  public static final Logger LOGGER = Logger.getLogger(HeapSpaceOutOfMemory.class.getName());
+
+  static {
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setFormatter(new LoggerFormatter());
+    LOGGER.addHandler(handler);
+    LOGGER.setLevel(Level.INFO);
+  }
 
   private HeapSpaceOutOfMemory() {}
 

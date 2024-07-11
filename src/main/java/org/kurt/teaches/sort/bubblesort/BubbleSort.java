@@ -1,13 +1,23 @@
 package org.kurt.teaches.sort.bubblesort;
 
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.kurt.teaches.sort.Sort;
-import org.kurt.util.LoggerUtil;
+import org.kurt.util.LoggerFormatter;
 import org.kurt.util.Swapper;
 
 public class BubbleSort implements Sort {
-  private static final Logger LOGGER = LoggerUtil.getLogger();
+  public static final Logger LOGGER = Logger.getLogger(BubbleSort.class.getName());
   private Swapper swapper;
+
+  static {
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setFormatter(new LoggerFormatter());
+    LOGGER.addHandler(handler);
+    LOGGER.setLevel(Level.INFO);
+  }
 
   public BubbleSort() {
     swapper = new Swapper();

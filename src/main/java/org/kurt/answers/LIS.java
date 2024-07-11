@@ -2,19 +2,28 @@ package org.kurt.answers;
 
 import static org.kurt.teaches.search.binary.BinarySearch.binarySearch;
 
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.kurt.teaches.nonGenericIntArrays.IntArray;
 import org.kurt.util.IntArrayFunction;
-import org.kurt.util.LoggerUtil;
+import org.kurt.util.LoggerFormatter;
 
 public class LIS {
-  private static final Logger LOGGER = LoggerUtil.getLogger();
+  public static final Logger LOGGER = Logger.getLogger(LIS.class.getName());
+
   public static IntArrayFunction longestIncreasingSubsequence;
   public static IntArrayFunction longestIncreasingSubsequenceQuick;
 
   private LIS() {} // ensures non-instantiability
 
   static {
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setFormatter(new LoggerFormatter());
+    LOGGER.addHandler(handler);
+    LOGGER.setLevel(Level.INFO);
+
     longestIncreasingSubsequence =
         seq -> {
           int length = seq.length;

@@ -1,7 +1,9 @@
 package org.kurt.experiments.list;
-import org.kurt.util.LoggerUtil;
+import org.kurt.util.LoggerFormatter;
 
 import java.util.*;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -10,7 +12,14 @@ import java.util.logging.Logger;
  *
  */
 public class Collections {
-  private static final Logger LOGGER = LoggerUtil.getLogger();
+  public static final Logger LOGGER = Logger.getLogger(Collections.class.getName());
+
+  static {
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setFormatter(new LoggerFormatter());
+    LOGGER.addHandler(handler);
+    LOGGER.setLevel(Level.INFO);
+  }
 
   public Collections(){}
 
