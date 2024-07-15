@@ -4,6 +4,14 @@ import static org.kurt.util.Math.max;
 public class LCS {
   private LCS(){}
 
+  /**
+   * How does one come up with the longest common subsequence algorithm without first being told it
+   *
+   *
+   * @param x
+   * @param y
+   * @return
+   */
   public static int LCS(String x, String y){
     int xLength = x.length();
     int yLength = y.length();

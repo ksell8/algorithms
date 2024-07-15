@@ -95,6 +95,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - User guide:
-      - Installation: guide/ready-player-one.md
+      - Installation: guide/what-is-a-computer.md
   - About:
       - Release notes: about/history.md
