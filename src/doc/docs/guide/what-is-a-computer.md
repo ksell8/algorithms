@@ -37,7 +37,7 @@ Let's try to automate away one sub-problem of Candy Crush with only read, write 
 Given an nxm matrix called of items determine if a possible move exists.
 
 A possible move is defined as:
-Swapping an element with it's surrounding element will create a line of
+Swapping an element with its surrounding element will create a line of
 3 or more of the same type of element.
 
 Examples:
@@ -78,7 +78,7 @@ b y r y
 
 Do you see a pattern in when a move exists and when it doesn't? 
 It seems if a move exists then there are 2 or more like items
-surrounding a matching element including diagonals.
+surrounding a matching element including its diagonals.
 
 How do you get the diagonals?  You add or subtract 1 from both the row
 number and the column number!  If you're just moving in up, down, side-to-side
