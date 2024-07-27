@@ -1,14 +1,4 @@
-# Welcome to MkDocs
-
-* [mkdocs documentation](http://mkdocs.org).
-* [mkdocs-material documentation](https://squidfunk.github.io/mkdocs-material/).
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+# Welcome to Kurt's Algorithms Site
 
 ## Gradle tasks
 

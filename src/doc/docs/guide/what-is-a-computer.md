@@ -76,19 +76,43 @@ r g b g
 b y r y
 ```
 
-Do you see a pattern in when a move exists and when it doesn't? 
-It seems if a move exists then there are 2 or more like items
-surrounding a matching element including its diagonals.
+Do you see a pattern for when a move exists and when it doesn't? 
 
-How do you get the diagonals?  You add or subtract 1 from both the row
-number and the column number!  If you're just moving in up, down, side-to-side
-you only modify one dimension at a time.  So we could visit each item,
-write down the neighboring items.  If 2 or more are equivalent to the element
-we are currently processing then accept, otherwise continue. 
+I found if a move exists then there are 2 or more like items surrounding a matching element.  If you find another pattern, that's fine too.  Whatever pattern it is you must be able to verify if it exists using only read, write and delete operations.
+
+As I cannot read your mind, we will work through the operations for my pattern.
+
+How do you get a the items surrounding an element?
+
+```fetch surrounding
+item = board[a][b]
+surrounding_tems = [
+                    board[a-1][b], 
+                    board[a+1][b], 
+                    board[a][b-1],
+                    board[a][b+1]
+                    //diagonals
+                    board[a-1][b+1],
+                    board[a-1][b-1],
+                    board[a+1][b+1],
+                    board[a+1][b-1]
+                    ]
+```
+
+We'd of course have to account for the edges.  But it's clear we could
+get the surrounding elements.  We could write the surrounding elements
+down and check to see if 2 or more of the element that we are evaluating surround it.
+If there are 2+ of the same element we have proved a move exists, otherwise we continue.
+If we check all the elements on the board without finding a move we can confidently
+state no move exists.
 
 So storing information and doing different things based on what's stored seems
-to be a robust enough model to solve cool problems with.  How did we get from a
-theoretical infinite tape to the smartphone though?
+to be a robust enough model to solve cool problems with.  The "based on what's stored"
+is the critical component here.  In computer science we call this state.  A program
+is considered stateful if it got to it's present state by stepping through a series of states.
+A program is stateless if each computation is viewed as a separate 
+
+How did we get from a theoretical infinite tape to the smartphone though?
 
 PUNCH CARDS?
 

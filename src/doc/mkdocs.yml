@@ -2,7 +2,7 @@ site_name: algorithms
 
 # Meta tags (placed in header)
 site_description: 
-#site_author: Your Name
+site_author: Kurt Sell
 site_url: # https://you.github.io/algorithms
 
 # Repository (add link to repository on each page)
@@ -95,6 +95,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - User guide:
-      - Installation: guide/what-is-a-computer.md
+      - What is a Computer?: guide/what-is-a-computer.md
   - About:
       - Release notes: about/history.md
