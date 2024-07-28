@@ -3,10 +3,10 @@
 The point of this project is to teach algorithms and test driven development with Java.
 
 Algorithms are a set of steps that are carried out to solve problems.
-While there are well known algorithms that are crucial for well-defined,
-well-studied problems.  Most of what you encounter in the real world is not
-well-defined or well studied.  So this approach to algorithms will attempt
-to give you the tools to approach any problem with an investigative mindset
+While there are well known algorithms for well-defined,
+well-studied problems, mst of what you encounter in the real world is not
+well-defined or well studied.  So this approach to teaching algorithms will
+give you the tools to approach any problem with an investigative mindset
 and apply well known as well as novel techniques to conquer any challenge.
 
 Gradle is the build tool used for this project.  To build the site which
