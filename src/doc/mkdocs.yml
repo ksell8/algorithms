@@ -5,11 +5,6 @@ site_description:
 site_author: Kurt Sell
 site_url: # https://you.github.io/algorithms
 
-# Repository (add link to repository on each page)
-#repo_name: algorithms
-#repo_url: http://github.com/you/algorithms
-#edit_uri: edit/master/src/doc/docs/
-
 #Copyright (shown at the footer)
 #copyright: 'Copyright &copy; 2017 Your Name'
 
@@ -39,24 +34,11 @@ theme:
 #    Required for variables support (https://github.com/rosscdh/mkdocs-markdownextradata-plugin)
 #  - markdownextradata
 
-#extra:
-#  palette:
-#    primary: 'indigo'
-#    accent: 'indigo'
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ksell8/algorithms
 
-#  version:
-#    provider: mike
-
-#  social:
-#    - icon: fontawesome/brands/github
-#      link: https://github.com/you
-#    - icon: fontawesome/brands/twitter
-#      link: https://twitter.com/you
-#
-# Google Analytics
-#  analytics:
-#    provider: google
-#    property: UA-XXXXXXXX-X
 
 markdown_extensions:
   # Python Markdown
@@ -86,12 +68,13 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
+  - pymdownx.tabbed
+  - admonition
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-
 nav:
   - Home: index.md
   - User guide:

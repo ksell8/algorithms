@@ -50,6 +50,14 @@ quality {
 
 val javaDocDir = "build/docs/javadoc"
 
+python{
+    requirements {
+        useVenv = true
+        use = true
+        file = "src/doc/requirements.txt"
+    }
+}
+
 tasks.javadoc {
     source = sourceSets["main"].allJava + sourceSets["test"].allJava
     classpath = sourceSets["main"].compileClasspath + sourceSets["test"].compileClasspath
