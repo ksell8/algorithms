@@ -9,6 +9,18 @@ well-defined or well studied.  So this approach to teaching algorithms will
 give you the tools to approach any problem with an investigative mindset
 and apply well known as well as novel techniques to conquer any challenge.
 
+Your package for these projects will be you.code. My tutorials will be in package
+org.kurt.teaches and boilerplate code will be in package org.kurt.util.
+There are also a number of experiments in package org.kurt.experiments which are
+mostly to demonstrate possible errors you can encounter while coding.
+Finally, org.kurt.answers will have possible solutions for the problems
+I'm asking you to solve.  
+
+A `package` in java is a group of related classes.  A `class` in java is 
+a collection of related functions and instance variables.  Classes 
+are used to represent `Object`s and `Object` java's base class.
+
+
 Gradle is the build tool used for this project.  To build the site which
 takes you through the steps needed to navigate this learning tutorial run:
 
