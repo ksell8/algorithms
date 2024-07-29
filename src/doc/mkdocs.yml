@@ -1,9 +1,9 @@
 site_name: algorithms
 
 # Meta tags (placed in header)
-site_description: 
+site_description: Teaching Algorithms
 site_author: Kurt Sell
-site_url: # https://you.github.io/algorithms
+repo_url: https://github.com/ksell8/algorithms
 
 #Copyright (shown at the footer)
 #copyright: 'Copyright &copy; 2017 Your Name'
@@ -11,6 +11,7 @@ site_url: # https://you.github.io/algorithms
 # Meterial theme
 theme:
   name: 'material'
+  logo: img/logo.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
