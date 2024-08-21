@@ -1,7 +1,9 @@
 # What is a Computer?
 
+## The Turing Machine
+
 In 1936 Alan Turing wrote *On Computable Numbers* which built on the previous
-work of Ada Lovelace and others to create a computational model that is equivalent
+work of Ada Lovelace and Charles Babbage to create a computational model that is equivalent
 to that of the machine you are reading this from.  The model was made of an 
 infinite tape.  The tape could be written to, read from and moved along.
 
@@ -35,7 +37,50 @@ Let's solve a very simple problem together to see how we would convert it for a 
     may exist.  However, not all solutions are equal.  We'll cover how to measure the effectiveness of a solution later on.
     In all cases, I encourage you to think through your own solution before expanding the provided solution.
 
-TODO: add stuff about transition tables?/binary -- simpler than writing transition for everything?
+!!! info
+    In Java a group of characters surrounded by double quotes (e.g. "this is a String") is called a String.  A character
+    is called a char and alone is denoted by single quotes (e.g. 'c').  The full implementation of the String
+    can be found on [GitHub](https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/lang/String.java)
+    because Java has an Open Source variant called the OpenJDK.  Most higher level computing languages are Open Source
+    because it allows the programmer to more deeply understand what they are actually doing.  We will learn more
+    about Strings later, but for now if you see String know it's just a fancy word for a bunch of characters strung together.
+
+How do we write algorithmic solutions though in a systematic way that a computer can understand? The Turing machine model defines the algorithm in something called a transition table.
+The transition table tells us what to do based on the current state of our program. A state can be defined in an infinite number of ways.
+
+Expanding from the previous example, I can define a state based on every single possible pair of 
+sentences I encounter and hardcode the answer within the transition table. But, since there are infinite sentences, this would lead to infinite states, and thus infinite transitions.
+
+Simpler still, I could define a transition for each pair of letters that I encounter while reading a sentence. Minimally including (,) ( ) (.) (?) (!) with lowercases and capitals this would make for 57 choose 2, or 1596 possible states.  
+If you don't know what choose means here, you don't need to know, just know it makes a big number. The goal is to make the states we decide on as generic as possible to cover all possible combinations of states.  
+
+Let's apply this idea to our problem above.
+
+!!! question
+    We are making our way through two Strings checking for equivalence.  What is the information is
+    most important to know about the characters in the two Strings and any given position:
+
+        a) What the current character is.
+
+        b) What the whole String up to the character is equal to.
+
+        c) Whether or not the characters at our current position in the Strings are equivalent.
+
+        d) Whether or not the Strings up to our current position in the Strings are equivalent.
+
+??? tip "Answer"
+    The information that is most important to know about the characters in the two Strings is c:
+    whether or not the characters at our current position in the Strings are equivalent!
+    
+    a & b are focused on state in one of the given Strings.  We are comparing two Strings,
+    so the state we will track will necessarily contain the state of both Strings.
+    
+    d is implied by our current position, so we don't have to track it in the information about our current position.
+    If we got to our current position and were not able to determine that the Strings are not equal, that means
+    all characters up to our current position are equal.  All we need to know at any given position is 
+    if both characters at that position are equal!
+    
+
 
 I know what, you're thinking: How is an infinite tape I can read and write to equivalent
 to my iPhone/Android? My Mom's favorite thing to do on her iPhone is play Candy Crush.
@@ -86,11 +131,13 @@ Let's try to automate away one sub-problem of Candy Crush with only read, write 
         1
         2
         ```
-        The x in the map above is at (0, 1).  We always give (row number, column number)
-        because in Java we will store the matrix as a list of rows.  You have to fetch
-        the nth row and then fetch the nth item within that row.  
+        The x in the map above is at (0, 1).  We will give (row number, column number)
+        because we will store the matrix as a list of rows.  You have to fetch
+        the nth row and then fetch the nth item within that row.  This is an implementation
+        detail though, you can do it both ways, but it changes how the implementation is done,
+        so for simplicity sake, we'll say we are storing rows.
         ```
-        int[][] exampleMatrix = { { r, g, r, r },
+        char[][] exampleMatrix = { { r, g, r, r },
                                   { g, r, g, r },
                                   { g, r, r, b } };
         ```
@@ -144,7 +191,7 @@ stateless computation is often more trivial than stateful computation.
 !!! question
     Are Turing Machines stateful or stateless?
 
-
+## The Modern Computer
 
 How did we get from a theoretical infinite tape to the smartphone though?
 

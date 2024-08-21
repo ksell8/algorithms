@@ -42,7 +42,7 @@ because the old way of tracking IPs put each range of IPs in a different class, 
 have classes, thus making it a lot easier to track IPs.  Inter-Domain means communication between different
 places on the internet.  And Routing refers to the paths that computers use to communicate.
 
-Computer's know which route to use based on a routing table.  CIDR made routing tables easier
+Computers know which route to use based on a routing table.  CIDR made routing tables easier
 to maintain because routes can be aggregated together `127.0.0.0/8` is an example of this
 as it actually stands for the range of `127.0.0.0-127.255.255.255`.  The first IP in a subnet
 is reserved as the access point to that subnet, so because `127.0.0.1` is the first usable
