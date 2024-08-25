@@ -79,4 +79,5 @@ nav:
   - Home: index.md
   - Your Journey Starts Here:
       - What is a Computer?: guide/what-is-a-computer.md
+      - What is Test Driven Development?: guide/test-driven-development-start.md
       - Where Do I Go From Here?: guide/more-resources.md
