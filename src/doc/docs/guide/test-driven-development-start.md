@@ -1,5 +1,5 @@
-Start your Test Driven Development Journey Here
-===============================================
+What is Test Driven Development or TDD? 
+========================================
 
 You can write a whole bunch of code, but without tests it's very hard to know you satisfied all cases your program will encounter without manually testing each one. Without automated testing you will have to run every single test case manually each time you want to make a change! It is best to write tests once each time you add a new feature. Test Driven Design suggests the ideal behavior is to write the test before implementing a feature. Start out with it failing and then work to get it to pass.
 
