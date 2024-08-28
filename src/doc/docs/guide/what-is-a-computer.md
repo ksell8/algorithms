@@ -161,7 +161,7 @@ to reason about them.
 ??? example "Example Answer"
     If a move exists then there are 3 or more like items surrounding a matching element vertically or horizontally
     where 2 of the matching elements are sequential either vertically or horizontally
-    OR 2 or more of the current element on the diagonals.  This pattern can be determined by enumerating all types
+    OR 2 or more of the current element on the diagonals, so long as they aren't opposite diagonals.  This pattern can be determined by enumerating all types
     of possible matches.
 
     ```
@@ -184,7 +184,17 @@ to reason about them.
       c
       c
     c x
- 
+    
+    c
+    x
+    c
+    c
+    
+    c
+    c
+    x
+    c
+
     c x c
       c 
 
@@ -200,36 +210,12 @@ to reason about them.
       c
     ```
 
-??? question "Follow Up Question to Implement Example Answer"
-    How do you get a the items surrounding an element?
-
-??? example "Example Solution"
-
-    ```
-    item = board[a][b]
-    surrounding_tems = [
-                        board[a-1][b], 
-                        board[a+1][b], 
-                        board[a][b-1],
-                        board[a][b+1]
-                        //diagonals
-                        board[a-1][b+1],
-                        board[a-1][b-1],
-                        board[a+1][b+1],
-                        board[a+1][b-1]
-                        ]
-    ```
-
-    We'd of course have to account for the edges.  But it's clear we could
-    get the surrounding elements.  We could write the surrounding elements
-    down and check to see if 2 or more of any element surround it.
-    If there are 2+ of the same element we have proved a move exists, otherwise we continue.
-    If we check all the elements on the board without finding a move we can confidently
-    state no move exists.
+Determining if these patterns exist in a performant way is a harder problem than we need to 
+get into right now.  But we will revisit candy crush when we get to sliding window algorithms.
 
 So storing information and doing different things based on what's stored seems
 to be a robust enough model to solve cool problems with.  The "based on what's stored"
-is the critical component here.  In computer science we call this state.  A program
+is the critical component here.  This is the state we decide on.  A program
 is considered stateful if it got to it's present state by stepping through a series of states.
 A program is stateless if each computation is viewed as a separate transaction, independent of each
 other.  In most programs there are normally instances of both stateless and stateful elements.
@@ -238,6 +224,10 @@ stateless computation is often more trivial than stateful computation.
 
 !!! question
     Are Turing Machines stateful or stateless?
+
+??? tip "Answer"
+    Turing Machines are stateful!  Each transition is based on the current state of the program.
+
 
 ## The Modern Computer
 

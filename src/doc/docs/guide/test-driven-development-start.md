@@ -6,20 +6,20 @@ You can write a whole bunch of code, but without tests it's very hard to know yo
 Exercises
 ---------
 
-There is one test failing in this test suite! It's your job to diagnosis it!
+There is one test failing in the TestFibonacci test suite! It's your job to diagnosis it!
 
 ### Run Tests From the Terminal:
 
 The terminal is how to interface with your computer without a GUI (graphical user interface). A terminal is also called a command line. And tools called CLIs or command line interfaces are run against them.
 
 1.  Download the [source code.](https://github.com/ksell8/algorithms.git).  
-    To get the source code on to your computer you need to install a tool called git. It is likely git will already exist on your computer. You can check by entering `which git` in your terminal (on windows use `where git` or hop into Powershell).  
+    To get the source code on to your computer you need to install a command line tool called git. It is likely git will already exist on your computer. You can check by entering `which git` in your terminal (on windows use `where git` or hop into Powershell).  
     If it exists congrats, run `git clone https://github.com/ksell8/algorithms.git`.  
-    Else, case(operating\_system):
-    *   Mac: if you have xcode: `xcode-select --install` // will install xcode command line tools  
+    Else, case(operating_system):
+    *   Mac: if you have xcode: `xcode-select --install` // will install xcode command line tools including git 
         else if you have brew: `brew install git`  
         else: install xcode from App Store or brew with `bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-    *   Linux: it depends what flavor of Linux you have. That distribution will have a package manager and with that package manager you can install git. Look up "how to install git on \[insert linux distribution\]" and there should be answers. But once you find your package manager it's a good bet the package is called git.  
+    *   Linux: it depends what flavor of Linux you have. That distribution will have a package manager and with that package manager you can install git. Look up "how to install git on [insert linux distribution]" and there should be answers. But once you find your package manager it's a good bet the package is called git.  
         If you don't know what Linux distribution you are running run: `cat /etc/os-release`. The linux distribution is the Name.
     *   Windows: Install using [Git for Windows](https://gitforwindows.org/).
 2.  OK, you should have a folder now called algorithms! Run `ls` or `dir` on windows to list the files in your current working directory. If algorithms does not exist, try cloning again with git.  
@@ -40,7 +40,7 @@ The terminal is how to interface with your computer without a GUI (graphical use
     │   │               ├── teaches/
     │   │               │   ├── Fib/
     │   │               │   │   ├── Fibonacci.java
-    │   │               │   │   └── BigNumbers.java
+    │   │               │   │   
     │   │               │   
     │   │               └── answers/
     │   │                   
@@ -65,7 +65,6 @@ The terminal is how to interface with your computer without a GUI (graphical use
     On nix (Mac, Linux) flavors run the following:
 
     `./gradlew build`
-
 
     On Windows flavors run:
 
@@ -94,7 +93,8 @@ IDE stands for Integrated Development Environment. This tutorial will help you g
 
     Clicking on the step-over button (denoted by the pink box) steps to the next step of the function being debugged, step-into (which is next to it) will step-into the function being called which may use implementations outside of the function being debugged.  
     ![welcome-to-the-call-stack](../img/call-stack.png)  
-    As you click through the function you will see
+    As you click through the function you will see the call stack.  The bottom of the call stack will be the test function, each frame added to the call stack is
+    called from the test function or nested functions within those calls.  Functions are removed from the call stack when they return, or in other words are exited.  Clicking on a frame will show the values of the local variables/parameters for that frame.
 
 
-Once you've identified the issue try to fix it in org.kurt.teaches.Fibonacci, rerun the tests until you pass! Ensure all tests pass! You can fix the failing test and fail different tests in turn. Be careful!
+Once you've identified the issue try to fix it in org.kurt.teaches.Fibonacci, rerun the tests until you pass! Ensure all tests pass! You can fix the failing test and fail different tests instead. Be careful!

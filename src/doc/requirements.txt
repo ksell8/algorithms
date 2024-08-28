@@ -1,0 +1,1 @@
+# so far using only default requirements installed by gradle task maintainer

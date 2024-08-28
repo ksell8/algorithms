@@ -41,6 +41,5 @@ bin/
 ### Core dumps from experiments ###
 *.dmp
 *.phd
-*.txt
 *.trc
 target

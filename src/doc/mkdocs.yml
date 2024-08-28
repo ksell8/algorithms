@@ -6,7 +6,7 @@ site_author: Kurt Sell
 repo_url: https://github.com/ksell8/algorithms
 
 #Copyright (shown at the footer)
-#copyright: 'Copyright &copy; 2017 Your Name'
+copyright: 'Copyright &copy; 2024 Kurt Sell'
 
 # Meterial theme
 theme:
@@ -79,5 +79,8 @@ nav:
   - Home: index.md
   - Your Journey Starts Here:
       - What is a Computer?: guide/what-is-a-computer.md
-      - What is Test Driven Development?: guide/test-driven-development-start.md
+      - Ingredients for an Algorithm: guide/ingredients-for-an-algorithm.md
+      - Setup Your Kitchen: guide/test-driven-development-start.md
+      - Starter Recipes: guide/starter-algorithms.md
+      - Pre-baked Java Collections: guide/advanced-data-structures.md
       - Where Do I Go From Here?: guide/more-resources.md

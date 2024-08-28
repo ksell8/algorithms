@@ -48,32 +48,11 @@ quality {
     strict = false
 }
 
-val javaDocDir = "build/docs/javadoc"
-
 python{
     requirements {
         useVenv = true
         use = true
         file = "src/doc/requirements.txt"
-    }
-}
-
-tasks.javadoc {
-    source = sourceSets["main"].allJava + sourceSets["test"].allJava
-    classpath = sourceSets["main"].compileClasspath + sourceSets["test"].compileClasspath
-    options {
-        this as StandardJavadocDocletOptions
-        title = "Kurt Teaches Algorithms!"
-        encoding = "UTF-8"
-        destinationDirectory = file(javaDocDir)
-        addBooleanOption("Xdoclint:none", true)  // Suppress all doclint warnings
-    }
-    doLast {
-        // Copy images to the Javadoc resource-files directory
-        copy {
-            from("src/test/resources/docs")
-            into("$javaDocDir/resource-files")
-        }
     }
 }
 
