@@ -4,7 +4,7 @@ The point of this project is to teach algorithms and test driven development wit
 
 Algorithms are a set of steps that are carried out to solve problems.
 While there are well known algorithms for well-defined,
-well-studied problems, mst of what you encounter in the real world is not
+well-studied problems, most of what you encounter in the real world is not
 well-defined or well studied.  So this approach to teaching algorithms will
 give you the tools to approach any problem with an investigative mindset
 and apply well known as well as novel techniques to conquer any challenge.
@@ -18,7 +18,7 @@ I'm asking you to solve.
 
 A `package` in java is a group of related classes.  A `class` in java is 
 a collection of related functions and instance variables.  Classes 
-are used to represent `Object`s and `Object` java's base class.
+are used to represent `Object`s and `Object` is java's base class.
 
 
 Gradle is the build tool used for this project.  To build the site which
